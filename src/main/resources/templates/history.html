@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1>Chat history</h1>
+<hr>
+
+<div th:each="entry : ${chatHistory}">
+    <p th:text="|Question: ${entry.question}|"></p>
+    <p th:text="|Answer: ${entry.answer}|"></p>
+    <hr>
+
+</div>
+
+
+<form th:action="@{/}" method="get" >
+    <button type="submit">
+        Go to home page
+    </button>
+</form>
+
 </body>
 </html>
