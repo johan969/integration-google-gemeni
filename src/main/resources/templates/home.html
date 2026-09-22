@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1>Chatbot</h1>
+
+<form action="/ask" method="get">
+    <input type="text" name="question" placeholder="Skriva din fråga här" required>
+    <button type="submit">Fråga</button>
+</form>
+
+<div th:if="${answer}">
+
+    <p th:if="${warning}" th:text="${warning}"></p>
+
+    <p th:text="${answer}" ></p>
+</div>
+
+<form th:action="@{/history}" method="get" >
+    <button type="submit">
+        Go to chat history
+    </button>
+</form>
+
 </body>
 </html>
